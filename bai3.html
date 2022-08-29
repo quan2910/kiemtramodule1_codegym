@@ -6,17 +6,11 @@
 </head>
 <body>
 <script>
-    function includeString(str1, str2) {
-        let output = false;
-        for (let i = 0; i < str2.length; i++) {
-            if(str2[i] === str1[0]){
-                let str3 = str2.slice(i, i + str1.length);
-                if(str3 === str1){
-                    output = true;
-                }
-            }
+    function isSubstring(str1, str2) {
+        for (let i = 0; i <= str2.length - str1.length; i++) {
+            if (str2.slice(i, i + str1.length) === str1) return true;
         }
-        return output;
+        return false;
     }
 </script>
 </body>

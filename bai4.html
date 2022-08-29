@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
+<canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
 </body>
 <Script>
     class Rectangle {
@@ -16,15 +16,16 @@
             this.height = height;
             this.color = color;
         }
-        drawRectangle() {
-            let c = document.getElementById("myCanvas");
-            let ctx = c.getContext("2d");
-            ctx.fillStyle = this.color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
 
+        render(canvas) {
+            const ctx = canvas.getContext("2d");
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.height, this.width);
         }
     }
-    const rec = new Rectangle(10, 10, 200, 100, "#000000");
-    rec.drawRectangle();
+
+    const canvas = document.querySelector("canvas");
+    const rect = new Rectangle(10, 10, 100, 200, "#000000");
+    rect.render(canvas);
 </Script>
 </html>
