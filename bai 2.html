@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tryRemoveFromArray(array, index) {
+        let outputArray = [];
+        for (let i = 0; i < array.length; i++) {
+            if( i == index ){
+
+                continue;
+            }else {
+                outputArray.push(array[i])
+            }
+        }
+        return outputArray;
+    }
+</script>
+</body>
+</html>
